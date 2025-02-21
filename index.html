@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forex Market Simulator - XAUUSD</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Trading Simulator - XAUUSD</h1>
+        <p>Select your starting balance:(USD)</p>
+        <input type="number" id="startingBalance" min="5" max="10000" value="100">
+        <button id="startGame">Start Trading</button>
+
+        <div id="trading-area" class="hidden">
+            <h2>Balance: $<span id="balance">0</span></h2>
+            <p>Leverage: 1:400 | Min Lot Size: 0.01 | Max Lot Size: 5</p>
+            
+            <label for="lotSize">Lot Size:</label>
+            <input type="number" id="lotSize" min="0.01" max="5" step="0.01" value="0.01">
+            
+            <button id="buyButton">Buy</button>
+            <button id="sellButton">Sell</button>
+            <button id="closeTrade" class="hidden">Close Position</button>
+            
+            <h3>Entry Price: $<span id="entryPrice">0.00</span></h3>
+            <h3>Trade P&L: $<span id="profitLoss">0.00</span></h3>
+            
+            <div id="chart-container">
+                <canvas id="candlestickChart"></canvas>
+            </div>
+            
+            <p id="gameStatus" class="hidden"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
